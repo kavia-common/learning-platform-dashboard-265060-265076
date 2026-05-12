@@ -1,10 +1,17 @@
 @import "tailwindcss";
 
 :root {
-  --color-primary: #000000;
-  --color-secondary: #FFFFFF;
-  --color-accent: #3B82F6;
-  --color-background: #FFFFFF;
+  --bg: #f9fafb;
+  --fg: #111827;
+
+  /* Retro-ish high-contrast tokens */
+  --surface: #ffffff;
+  --border: #000000;
+
+  --accent: #3b82f6; /* blue */
+  --accent2: #f59e0b; /* amber */
+  --good: #10b981; /* green */
+  --bad: #ef4444; /* red */
 }
 
 * {
@@ -17,10 +24,17 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
-  background-color: var(--color-background);
-  color: var(--color-primary);
+  background: var(--bg);
+  color: var(--fg);
 }
 
 body {
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
+    Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+/* Make focus visible even with custom shadows/borders */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }
