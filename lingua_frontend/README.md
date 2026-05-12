@@ -18,6 +18,19 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
+## API Configuration (Lingua Backend)
+
+This frontend calls the FastAPI backend using an environment-driven base URL:
+
+- `NEXT_PUBLIC_API_BASE_URL`: Base URL of the backend (e.g. `http://localhost:3001`)
+
+Notes:
+
+- `NEXT_PUBLIC_API_BASE_URL` must be reachable from the browser (not just from a server-side network).
+- The backend must allow your frontend origin via CORS.
+  - For MVP/dev, the backend defaults to `allow_origins=["*"]`.
+  - For production, configure backend `CORS_ALLOW_ORIGINS` to a comma-separated list of allowed origins (e.g. `https://your-frontend.example.com`).
+
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
 ## Learn More
